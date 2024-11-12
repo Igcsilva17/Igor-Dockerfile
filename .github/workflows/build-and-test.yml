@@ -18,6 +18,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: List files for debugging (Frontend)
+        run: ls -R
+
       - name: Build front-end Docker image
         run: docker build -t frontend-image ./frontend
 
@@ -33,6 +36,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: List files for debugging (Backend)
+        run: ls -R
+
       - name: Build back-end Docker image
         run: docker build -t backend-image ./backend
 
@@ -47,6 +53,9 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
+
+      - name: List files for debugging (Database)
+        run: ls -R
 
       - name: Build database Docker image
         run: docker build -t database-image ./database
